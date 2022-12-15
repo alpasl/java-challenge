@@ -14,16 +14,15 @@ public class EmployeeServiceImpl implements EmployeeService{
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    public void setEmployeeRepository(EmployeeRepository employeeRepository) {
-        this.employeeRepository = employeeRepository;
-    }
-
     public List<Employee> retrieveEmployees() {
-        List<Employee> employees = employeeRepository.findAll();
-        return employees;
+    	return employeeRepository.findAll();
     }
 
     public Employee getEmployee(Long employeeId) {
+    	// check if employeeId is not null so that IllegalArgumentException won't be thrown
+    	if (null == employeeId) {
+    		return null;
+    	}
         Optional<Employee> optEmp = employeeRepository.findById(employeeId);
         return optEmp.get();
     }
@@ -35,8 +34,10 @@ public class EmployeeServiceImpl implements EmployeeService{
     public void deleteEmployee(Long employeeId){
         employeeRepository.deleteById(employeeId);
     }
-
-    public void updateEmployee(Employee employee) {
-        employeeRepository.save(employee);
+    
+    public void updateEmployee(Long id, Employee employee) {
+    	if (getEmployee(id) != null) {
+            employeeRepository.save(employee);
+    	}
     }
 }

@@ -43,10 +43,15 @@ Application (with the embedded H2 database) is ready to be used ! You can access
 - Is the application running as expected
 - No performance issues
 
-#### Your experience in Java
+#### My experience in Java
+- I have 6 years of experience in using Java for web app development, android app development, and desktop app development.
+- I haven't used Spring Boot in my previous projects, and started to use it just this time. However, I have 3 years of experience using Spring (which is the foundation of Spring Boot).
 
-Please let us know more about your Java experience in a few sentences. For example:
+#### What I did
+- Improved source code, removed unnecessary codes
+- Added javadoc and comments
+- Added test cases
 
-- I have 3 years experience in Java and I started to use Spring Boot from last year
-- I'm a beginner and just recently learned Spring Boot
-- I know Spring Boot very well and have been using it for many years
+#### TODO
+- Add request and response logging interceptor
+- Add request authentication interceptor to make sure that requests come from a trusted source
